@@ -11,11 +11,25 @@ const tramix = (options = {}) => {
         rule.walkDecls(property, decl => {
           const { value } = decl;
           const results = handler(value, decl);
-          if (!results) { return }
 
-          results.map(result => {
-            decl.before(result);
-          });
+          const resultsIsUndefined = utils.checkType("undefined", results);
+          const resultsIsArray = utils.checkType("array", results);
+
+          if (!resultsIsArray && !resultsIsUndefined) {
+            throw decl.error(
+              `tramix error: ${String(results)} is not of acceptable type.`
+            );
+          }
+
+          if (resultsIsUndefined) {
+            return;
+          }
+
+          if (resultsIsArray) {
+            results.map(result => {
+              decl.before(result);
+            });
+          }
 
           decl.remove();
         });
