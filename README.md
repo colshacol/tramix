@@ -2,6 +2,8 @@
 
 > Stylus-like transparent mixins with PostCSS and JavaScript.
 
+Include tramix in your PostCSS configuration:
+
 ```javascript
 // ./postcss.config.js
 
@@ -18,6 +20,8 @@ module.exports = {
 }
 ```
 
+Define your mixins:
+
 ```javascript
 // ./mixins.js
 
@@ -32,6 +36,8 @@ exports.layout = (value: string, decl: Object) => {
 }
 ```
 
+Input css:
+
 ```css
 /* TestComp.css */
 
@@ -41,6 +47,7 @@ exports.layout = (value: string, decl: Object) => {
 }
 ```
 
+Finished product:
 
 ```css
 /* wherever/you/output/to.css */
