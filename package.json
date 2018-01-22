@@ -4,9 +4,18 @@
   "description": "",
   "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "postcss --config ./example/postcss.config.js ./example/components/styles.css"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "postcss": "^6.0.16",
+    "postcss-cli": "^4.1.1"
+  },
+  "dependencies": {
+    "decamelize-keys": "^1.1.0",
+    "to-regex": "^3.0.1"
+  }
 }

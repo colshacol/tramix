@@ -1,5 +1,5 @@
 const postcss = require('postcss')
-const tramix = require('tramix')
+const tramix = require('../bin/index.js')
 const path = require('path')
 
 module.exports = {

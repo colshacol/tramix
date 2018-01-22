@@ -1,12 +1,10 @@
 const themes = {
-	blue: [
-		'color: white',
-		'background: blue',
-	],
+	blue: {
+		color: 'white',
+		backgroundColor: 'blue'
+	}
 }
 
 exports.theme = (value) => {
-	if (value in themes) {
-		return themes[value];
-	}
+	return (value in themes) && themes[value];
 }

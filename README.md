@@ -2,7 +2,7 @@
 
 > Stylus-like transparent mixins with PostCSS and JavaScript.
 
-Include tramix in your PostCSS configuration:
+## 1. Include tramix in your PostCSS configuration.
 
 ```javascript
 // ./postcss.config.js
@@ -14,48 +14,52 @@ const path = require('path')
 module.exports = {
     plugins: [
         tramix({
-            include: path.resolve(__dirname, 'mixins.js'),
+            include: path.resolve(__dirname, 'path/to/mixins.js'),
         }),
     ],
 }
 ```
 
-Define your mixins:
+## 2. Define your mixins.
 
 ```javascript
-// ./mixins.js
+// mixins.js
 
-exports.layout = (value: string, decl: Object) => {
-	if (value === 'column') {
-		return [
-			'display: flex',
-			'flex-direction: column',
-			'background: plz gimme a bg',
-		]
+const themes = {
+	blue: {
+		color: 'white',
+		backgroundColor: 'blue'
 	}
+}
+
+exports.theme = (value) => {
+	return (value in themes) && themes[value];
 }
 ```
 
-Input css:
+## 3. Write some CSS.
 
 ```css
 /* TestComp.css */
 
-.TestComp {
-  color: red;
-  layout: column;
+.MyComp {
+	theme: blue;
 }
 ```
 
-Finished product:
+## 3. Enjoy.
 
 ```css
 /* wherever/you/output/to.css */
 
-.TestComp {
-	color: red;
-	display: flex;
-	flex-direction: column;
-	background: plz gimme a bg;
+.MyComp {
+	color: white;
+	background-color: blue;
 }
 ```
+
+# Rules
+
+- Each exported member of your `options.include` mixins file must be a function that will accept one parameter `value` and return an CSS-like object to be converted into actual CSS.
+- Don't use custom property names beginning with weird characters ($, !, #, etc) because it just won't work (yet).
+- Be a good chap and don't try to get away with creating custom mixins based on existing property names.
