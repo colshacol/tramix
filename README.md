@@ -2,6 +2,14 @@
 
 > Stylus-like transparent mixins with PostCSS and JavaScript.
 
+## 0. Install tramix.
+
+```bash
+npm i -D tramix
+# or
+yarn add --dev tramix
+```
+
 ## 1. Include tramix in your PostCSS configuration.
 
 ```javascript
@@ -47,7 +55,7 @@ exports.theme = (value) => {
 }
 ```
 
-## 3. Enjoy.
+## 4. Enjoy.
 
 ```css
 /* wherever/you/output/to.css */
