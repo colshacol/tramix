@@ -1,0 +1,64 @@
+{
+	"_from": "tramix",
+	"_id": "tramix@2.0.1",
+	"_inBundle": false,
+	"_integrity": "sha512-TpRdB7hRs4pZnaU7ja77of+vGzWJcgbwOXYpppApP+XM0IEX56OU8+gtLNNClTF3SnEFJBmL0rv8vIzj3M4sQA==",
+	"_location": "/tramix",
+	"_phantomChildren": {},
+	"_requested": {
+		"type": "tag",
+		"registry": true,
+		"raw": "tramix",
+		"name": "tramix",
+		"escapedName": "tramix",
+		"rawSpec": "",
+		"saveSpec": null,
+		"fetchSpec": "latest"
+	},
+	"_requiredBy": [
+		"#DEV:/",
+		"#USER"
+	],
+	"_resolved": "https://registry.npmjs.org/tramix/-/tramix-2.0.0.tgz",
+	"_shasum": "622d3c7248702f83801c7eaea38821f0549101dd",
+	"_spec": "tramix",
+	"_where": "/mnt/m/code/iterable/source",
+	"author": "Colton Colcleasure <colshacol@gmail.com>",
+	"bundleDependencies": false,
+	"dependencies": {
+		"decamelize-keys": "^1.1.0"
+	},
+	"deprecated": false,
+	"description": "Transparent CSS mixins with PostCSS and JavaScript.",
+	"peerDependencies": {
+		"postcss": "^6.0.16",
+		"postcss-cli": "^4.1.1"
+	},
+	"devDependencies": {
+		"jest": "^22.4.2",
+		"postcss": "^6.0.16",
+		"postcss-cli": "^4.1.1"
+	},
+	"keywords": [
+		"css",
+		"css mixins",
+		"postcss",
+		"css-in-js",
+		"stylus"
+	],
+	"license": "ISC",
+	"main": "bin/index.js",
+	"name": "tramix",
+	"scripts": {
+		"test": "jest"
+	},
+	"version": "2.0.1",
+	"jest": {
+		"testRegex": "(/tests/.*\\.t\\.js)$",
+		"setupFiles": [
+			"./.jest/setup.js"
+		],
+		"automock": false,
+		"restoreMocks": true
+	}
+}
